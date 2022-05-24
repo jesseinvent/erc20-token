@@ -11,6 +11,9 @@ contract InventToken is ERC20 {
     // symbol indicates the symbol of the cryptocurrency e.g ETH
     constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol){
         // _mint is an internal function within the ERC20 standard contract, which
+        // means it can only be called by the contract itself.
+        // ERC20 tokens by default work with 18 decimal places, i.e 1 full InventToken
+        // is represented with as `10 ^ 18`
         _mint(msg.sender, 10 * 10 ** 18);
     }
 }
